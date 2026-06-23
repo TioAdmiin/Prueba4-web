@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Formulario de Registro de Libros</title>
+</head>
+
+<body>
+    <div class="Header">
+        <h1 class="Header-title">Formulario de Registro de Libros</h1>
+        <nav class="Header-nav">
+            <p>Registro y visualización de libros creado por Daniel Garrido Bustos</p>
+        </nav>
+    </div>
+
+    <div class="Content">
+        <form id="formulario-libros" novalidate>
+            <div class="form-group">
+                <label for="titulo">Título del Libro:</label>
+                <input type="text" id="titulo" placeholder="Ej: Don Quijote de la Mancha" />
+                <span id="error-titulo" class="error-msg"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Correo de quien lo recomienda:</label>
+                <input type="email" id="email" placeholder="usuario@correo.com" />
+                <span id="error-email" class="error-msg"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="categoria">Categoría Principal:</label>
+                <select id="categoria">
+                    <option value="">-- Seleccione una categoría --</option>
+                    <option value="ficcion">Ficción</option>
+                    <option value="no-ficcion">No Ficción / Educativo</option>
+                </select>
+                <span id="error-categoria" class="error-msg"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="genero">Género Literario:</label>
+                <select id="genero" disabled>
+                    <option value="">-- Seleccione primero una categoría --</option>
+                </select>
+                <span id="error-genero" class="error-msg"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="anio">Año de Publicación:</label>
+                <input type="number" id="anio" placeholder="Ej: 1605" />
+                <span id="error-anio" class="error-msg"></span>
+            </div>
+
+            <button type="submit" id="btn-guardar">Guardar Libro</button>
+        </form>
+    </div>
+
+    <div style="margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center;">
+        <h1>Visor del Catálogo</h1>
+    </div>
+
+    <h2>Libros Registrados</h2>
+    
+    <div id="contenedor-visor" class="catalogo-grid"></div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
