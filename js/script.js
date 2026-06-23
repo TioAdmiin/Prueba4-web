@@ -7,7 +7,7 @@ const selectGenero = document.getElementById('genero');
 const inputAnio = document.getElementById('anio');
 const contenedorVisor = document.getElementById('contenedor-visor');
 
-// Datos
+// Generos segun la categoria
 const generosPorCategoria = {
     'ficcion': [
         { value: 'novela', text: 'Novela' },
@@ -23,13 +23,14 @@ const generosPorCategoria = {
     ]
 };
 
+// Lista de libros
 let listaDeLibros = JSON.parse(localStorage.getItem('mis_libros')) || [];
 
 function guardarEnLocalStorage() {
     localStorage.setItem('mis_libros', JSON.stringify(listaDeLibros));
 }
 
-// Lógica de Selects
+// Lógica de Categorias
 function actualizarSelectGenero() {
     const categoriaSeleccionada = selectCategoria.value;
     selectGenero.innerHTML = '';
